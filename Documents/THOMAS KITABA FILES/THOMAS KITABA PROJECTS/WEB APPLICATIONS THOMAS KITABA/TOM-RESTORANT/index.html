@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTOURANT</title>
+
+    <style>
+    /*---------- laying out the page ----------- */
+  
+*{
+  box-sizing: border-box;
+  
+}
+body{
+  margin: 0;
+  padding: 0;
+
+}
+.back-image{
+  position:absolute;
+  background-image: url("food-images/best-kitchen-wall.jpg");
+  top: 0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  z-index: -1;
+  background-size: cover;
+  filter: blur(2px);
+} 
+.container{
+
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px auto;
+  width: 100%;
+}
+.image-1{
+  width:20%;
+  margin: 0 auto; /* center image with in page)*/
+  border-radius: 20px;
+  
+}
+.banner{
+  
+background-image: url("food-images/Doro-Wot-1.jpg");
+background-size: cover;
+background-position: center top;
+display: flex;
+justify-content: center;
+align-items: center;
+text-shadow: -4px -4px 4px green,
+2px 2px 4px yellow,
+5px -5px 4px rgb(255,0,0, .5) ;
+
+
+}
+.restorant-name{
+  color: rgb(0,0,0,.5);
+  background-color: rgb(255, 255, 255,.2);
+  font-size: 100px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.nav{
+  display: flex;
+  background: linear-gradient(135deg, rgb(22,22,22,.4), rgb(200,200,200,.2));
+  border-radius: 20px;
+}
+.nav a{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  justify-content: center;
+  
+}
+.nav-list{
+  display: flex;
+  width: 90%;
+  gap: 10px;
+  list-style: none;
+  border: 2px dashed blue;
+  justify-content:center;
+  align-items: center;
+  
+}
+
+.subscribe, .nav-list>li{
+  width:auto;
+  align-self: center;
+  border: 2px dashed green;
+  background:linear-gradient(to right, darkblue, rgb(12, 129, 168));
+  border-radius: 10px;
+  padding: 5px;
+  border-radius: 20px;
+}
+/* ------------------------------------------------------------ */
+/*  ------- information about the weeks ---------------------*/
+
+.center-body {
+position: relative;
+background: linear-gradient(to bottom, rgba(15, 63, 12, .9), rgba(35, 38, 36, 0.9));
+background-color: aliceblue;
+display:flex;
+flex-wrap: wrap;
+width: auto;
+color: white;
+border-radius: 20px;
+width: min-content;
+
+}
+/* weeks block will serve as empty area for week info pop up */
+.weeks{
+  background-image: url("food-images/front-restourant.jpg");
+ 
+  width: 100%;
+  background-size: cover;
+  background-position: center top;
+  display:flex;
+  min-height: 350px;
+  background-color: rgb(255,255,255,.6);
+  border-radius: 20px;
+  min-width: fit-content;
+  
+  
+}
+.week-names{
+  display:none;
+  
+}
+
+.default-content{
+  position:absolute;
+
+  top: 220%;
+  left: 10%;
+  transform: translate(-50% -50%);
+  font-size: 4rem;
+  font-weight: bold;
+  width: auto;
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+.day-content, .monday-content, .tuesday-content, .wednesday-content, .thursday-content, .friday-content, .saturday-content, .sunday-content {
+  position: absolute;
+  
+  
+  display:none;
+  top: 120%;
+  left: 0;
+  border-radius: 20px;
+  height: 300px;
+  margin: 5px ;
+  padding: 20px;
+  /* background: linear-gradient(to left, rgba(175, 17, 17, 0.9), rgb(255, 255, 255, .8)); */
+  background: linear-gradient(to bottom, rgba(15, 63, 12, .9), rgba(35, 38, 36, 0.9));
+  border: 2px dashed blueviolet;
+  color: black;
+  
+  box-shadow: 3px 3px 6px rgb(255, 255, 255, .5);
+  
+}
+.discription-container{
+  display: flex;
+  border: 2px solid green;
+  gap: 20px;
+  flex-basis: 100%;
+  justify-content: center;
+  align-content: center;
+ 
+
+}
+.day-discription{
+  
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 20px;
+}
+.special-foods, .special-events{
+  border: 2px solid red;
+  width: 200px;
+  height: 175px;
+  
+}
+.discription-image, .day-discription,.other-discription, .winner-discription {
+  border: 2px dashed blue;
+  
+}
+.monday:hover .day-content{
+  display:block;
+}
+.tuesday:hover .day-content{
+  display:block;
+}
+.wednesday:hover .day-content{
+  display:block;
+}
+.thursday:hover .day-content{
+  display:block;
+}
+.friday:hover .day-content{
+  display:block;
+}
+.saturday:hover .day-content{
+  display:block;
+}
+.sunday:hover .day-content{
+  display:block;
+}
+.sunday-discription{
+height: 50%;
+border-radius: 2px dashed green;
+}
+.monday-events{
+  height: 5px;
+  border-radius: 2px dashed green;
+}
+
+
+
+[class*="our-article-"]{
+  
+  background:rgb(193, 249, 62, .5);
+  border-radius: 2px;
+  width: 150px;
+  height: 175px;
+  margin: 5px;
+  padding:5px;
+  box-shadow: 2px 2px 4px 1px rgb(0, 0, 0, .9);
+    
+}
+
+[class*="our-article-"]:hover{
+  
+  filter:5px;
+  border-radius: 10px;
+  color: blue;
+  background-blend-mode: lighten;
+  box-shadow: 2px 2px 4px 1px rgba(219, 239, 5, 0.951);
+}
+
+.monday{
+  background-image: url("food-images/weeks-400x400/monday-kurt-400x400.jpg");
+  background-size: cover;
+}
+.tuesday{
+  background-image: url("food-images/weeks-400x400/tuesday-doro-wot.jpg");
+  background-size: cover;
+}
+.wednesday{
+  background-image: url("food-images/weeks-400x400/wednesday-byaynet-2-400x400.jpg");
+  background-size: cover;
+}
+.thursday{
+  background-image: url("food-images/weeks-400x400/Thursday-doro-2-400x400.jpg");
+  background-size: cover;
+}
+.friday{
+  background-image: url("food-images/weeks-400x400/friday-yetsom-400x400.jpg");
+  background-size: cover;
+}
+.saturday{
+  background-image: url("food-images/weeks-400x400/saturday-kekel-2-400x400.jpg");
+  background-size: cover;
+}
+.sunday{
+  background-image: url("food-images/weeks-400x400/sunday-all-400x400.jpg");
+  background-size: cover;
+}
+
+.lower-body{
+  display: flex;
+  padding-top: 20px;
+      justify-content: center;
+      align-items: flex-start;
+      
+      background: linear linear-gradient(to right, #00F260, #0575E6 );
+      background-image: url(food-images/weeks-400x400/table-for-footer.png), url(food-images/footer-background.jpg);
+      
+      background-position: center bottom, center center;
+      height: 50vh;
+      min-height: min-content;
+      background-size: cover, cover;
+      background-repeat: no-repeat, repeat;
+      
+    
+      box-shadow: 2px 2px 10px rgb(0, 247, 255);
+      border-radius: 20px;
+      
+}
+
+/* ------------------------------------------------- */
+.footer-content, .center-body {
+  position: relative;
+width: 100%;
+display: flex;
+flex: 1;
+border: 2px dashed green;
+justify-content: center;
+align-items: center;
+}
+
+
+
+.Testimonies, .notification, .food-menu {
+  width: 200px;
+  height: 175px;
+  
+  margin: 10px;
+  padding:10px;
+  border-radius: 20px;
+}
+.Testimonies, .notification{
+  box-shadow: 2px 2px 10px black;
+}
+
+.food-menu{
+  background-image: url("food-images/restorant-menu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.food-menu:hover  {
+  background-image: url("food-images/restorant-menu-hover.png");
+  background-blend-mode: lighten;
+  border: 2px 2px 4px black;
+
+
+}
+/* -------------  RESTAURANT FOOD MENU ------------------- */
+.food-menu:hover .menu-list {
+display: flex;
+background-color: rgb(74, 73, 73);
+}
+
+.menu-list{
+
+  display: none;
+  position: absolute;
+  left: 0px;
+  bottom: 100%;
+  width: 100%;
+  border-radius: 20px;
+  
+  background-color: rgb(53, 52, 52);
+ 
+  gap: 10px;
+
+  background-color: white;
+  box-shadow: 0 4px 4px black;
+
+  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 100%;
+  flex: 1;
+
+  
+}
+.break-fast, .main-food, .drinks, .other {
+  border: 2px dashed black;
+  gap: 10px;
+  flex: 1;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px yellow;
+
+}
+
+.break-fast{
+  background-image: url("food-images/patterns/food-pattern-1.jpg");
+  
+}
+.main-food{
+  background-image: url("food-images/patterns/food-pattern-small-2.jpg");
+}
+.drinks{
+  background-image: url("food-images/patterns/drinks-pattern-small-1.jpg");
+}
+.other{
+  background-image: url("food-images/patterns/coffe-pattern-small-1.jpg");
+}
+
+
+.day-discription{
+  flex-wrap: wrap;
+  margin: 0px;
+  gap: 10px;
+  
+}
+.discription-image{
+  align-self:center;
+}
+
+/* ------------- end of menu list ----------------------- */
+@media (min-width: 800px){
+  .image-1{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .day-content{
+    top: 130%;
+    width: 98%;
+    min-height: 330px;
+  }
+  
+  
+}
+
+@media (max-width: 1143px){
+  
+    .week-names{
+    display:flex;
+    list-style: none;
+    gap:10px;
+    
+  }
+  .day-content{
+    top: 110%;
+    width: 98%;
+    min-height: 350px;
+  }
+  
+  
+  .weeks{
+    margin-top: 0px;
+height: 400px;
+  
+  } 
+  
+  .default-content{
+  top: 150%;
+  }
+}
+
+@media (max-width: 799px){
+  .banner{
+    width: fit-content;
+  }
+  .nav{
+    flex-direction: column;
+  
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  .discription-container{
+    flex-direction: column;
+  }
+  .weeks{
+    height: 650px;
+  }
+  
+  .day-content{
+  top: 115%;
+  width: 98%;
+  height: 600px;
+  
+}
+
+
+  }
+
+  @media(max-width: 600px){
+  .container{
+    min-width:600px;
+  }
+  .day-content{
+    top: 110%;
+    width: 98%;
+    min-height: 800px;
+  }
+
+  .weeks{
+    margin-top: 0px;
+height: 850px;
+  
+
+}
+
+
+
+
+      /* ------------- end of page layout ------------- */
+.banner, .nav, .center-body, .weeks, .footer{
+  border: .1rem solid red;
+  margin:50px;
+  
+}
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        
+        let day_discription =document.querySelectorAll(".day-content");
+        let main_day =document.querySelectorAll(".main-day");
+        let monday_content = document.querySelector(".monday-content");
+
+        for (let i = 0; i< main_day.length; i++)
+        {
+          main_day[i].addEventListener("click", function(){
+            for (let j = 0; j < day_discription.length; j++)
+            {
+              if (j == i)
+              {
+                day_discription[i].style.display = "block";
+              }
+              else
+              {
+                day_discription[j].style.display = "none";
+              }
+            
+            }
+          });
+        }
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div class="back-image">
+
+    </div>
+    <div class="container-fluid">
+      <div class="banner">
+        <div class="restorant-name"> TOM Restaurant</div>
+
+      </div>
+      <div class="nav">
+        <ul class="nav-list">
+          <li> <a href="index.html"> Home </a> </li>
+          <li> <a href="#"> About-Us</a> </li>
+          <li> <a href="#"> Gallary</a></li>
+          <li> <a href="#"> Contact-Us</a></li>
+
+        </ul>
+        <a class="subscribe" href="#"> SUBSCRIBE</a>
+      </div>
+
+      <div class="center-body ">
+
+        <div class="default-content">
+          <div class="default-welcome">
+
+            The best Resturants in the city!!
+
+          </div>
+        </div>
+        <!--          ---------------- MONDAY  ------------  -->
+        <div class="monday our-article-1 main-day">
+          <h1> Monday </h1>
+          <p> Start your week with our kurt </p>
+          <div class="monday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/monday-kurt-400x400.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Monday specials</h3>
+                  <li>Monday-food 1</li>
+                  <li>Monday-food 2</li>
+                  <li>Monday-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3>Monday events</h3>
+                  <li>mondays event 1</li>
+                  <li>mondays event 2</li>
+                  <li>mondays event 3</li>
+                  <li>mondays event 4</li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+
+        </div>
+        <!--                   TUESDay        -----         -->
+        <div class="tuesday our-article-2 main-day">
+          <h1> Tuesday </h1>
+          Where lust for Ethiopian Famous Dish "DORO WOT"
+          reachs its peack
+          <div class="tuesday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/tuesday-doro-wot.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Tuesdays Special</h3>
+                  <li>Tuesdays-food 1</li>
+                  <li>Tuesdays-food 2</li>
+                  <li>Tuesdays-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3>Tuesdays Events </h3>
+                  <li>Tuesdays event 1</li>
+                  <li>Tuesdays event 2</li>
+                  <li>Tuesdays event 3</li>
+                  <li>Tuesdays event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+
+          <!--  --------------                  WEDENESDAYS DETAIL INFOMATION         ------------------->
+        </div>
+        <div class="wednesday our-article-3 main-day">
+
+          <h1> Wednesday </h1>
+          Where Fasting(የ ቶም) food is prepared for those in need
+
+          <div class="wednesday-content day-content ">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/tuesday-doro-wot.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Wednesdays Special</h3>
+                  <li>Wednesdays-food 1</li>
+                  <li>Wednesdays-food 2</li>
+                  <li>Wednesdays-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3> Wednesdays Events </h3>
+                  <li>Wednesdays event 1</li>
+                  <li>Wednesdays event 2</li>
+                  <li>Wednesdays event 3</li>
+                  <li>Wednesdays event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+
+
+        </div>
+        <div class="thursday our-article-4 main-day">
+          <h1> Thursday </h1>
+          <p>Come and have unique experience with us. </p>
+          <div class="thursday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/tuesday-doro-wot.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Thursday Special</h3>
+                  <li>Thursday-food 1</li>
+                  <li>Thursday-food 2</li>
+                  <li>Thursday-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3> Thursday Events </h3>
+                  <li>Thursday event 1</li>
+                  <li>Thursday event 2</li>
+                  <li>Thursday event 3</li>
+                  <li>Thursday event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+        </div>
+        <div class="friday our-article-5 main-day">
+          <h1> Friday </h1>
+          <p> delicious food for
+            for both muslims and christians </p>
+          <div class="friday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/friday-yetsom-400x400.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Friday Special</h3>
+                  <li>Friday-food 1</li>
+                  <li>Friday-food 2</li>
+                  <li>Friday-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3> Friday Events </h3>
+                  <li>Friday event 1</li>
+                  <li>Friday event 2</li>
+                  <li>Friday event 3</li>
+                  <li>Friday event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+        </div>
+        <div class="saturday our-article-6 main-day">
+          <h1> Saturday </h1>
+          <p> we are prepared to entertain your kid </p>
+          <div class="saturday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img
+                  src="food-images/weeks-400x400/saturday-kekel-2-400x400.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Saturday Special</h3>
+                  <li>Saturday-food 1</li>
+                  <li>Saturday-food 2</li>
+                  <li>Saturday-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3> Saturday Events </h3>
+                  <li>Saturday event 1</li>
+                  <li>Saturday event 2</li>
+                  <li>Saturday event 3</li>
+                  <li>Saturday event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+        </div>
+        <div class="sunday our-article-7 main-day">
+          <h1> Sunday </h1>
+          <p> Where every tasty food in our restorant comes to life </p>
+          <div class="sunday-content day-content">
+            <div class="discription-container">
+              <div class="discription-image">
+
+                <img src="food-images/weeks-400x400/friday-yetsom-400x400.jpg"
+                  alt="Kurt sega mondays special food" style= width:200px;>
+              </div>
+              <div class="day-discription">
+
+                <ul class="special-foods">
+                  <h3>Sunday Special</h3>
+                  <li>Sunday-food 1</li>
+                  <li>Sunday-food 2</li>
+                  <li>Sunday-food </li>
+                </ul>
+
+                <ul class="special-events">
+                  <h3> Sunday Events </h3>
+                  <li>Sunday event 1</li>
+                  <li>Sunday event 2</li>
+                  <li>Sunday event 3</li>
+                  <li>Sunday event 4</li>
+                </ul>
+
+              </div>
+
+            </div>
+            <div class="other-discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+              corrupti adipisci! Corporis consectetur deserunt unde, nisi est
+              dolorem vero quisquam necessitatibus laboriosam, repellat
+              voluptates asperiores odit impedit illo iusto corrupti ipsum.
+              Reiciendis exercitationem iure eum quisquam laboriosam inventore
+              voluptate dicta dolorum accusantium delectus, quo eligendi veniam
+              vero asperiores vitae.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- empty block level element for week information-->
+
+      <div class="weeks">
+
+        <div class="special-food">
+          <!-- <ul class="week-names">
+            <li class="monday-list">monday</li>
+            <li class="tuesday">tuesday</li>
+            <li class="wednesday">wednesday</li>
+            <li class="thursday">thursday</li>
+            <li class="friday">friday</li>
+            <li class="saturday">saturday</li>
+            <li class="sunday">sunday</li>
+          </ul> 
+        
+          <img class="image-1" src="food-images/Best-Ethiopian-Food.jpg" alt="ethiopian beyeaynet wot"> -->
+        </div>
+
+      </div>
+
+      <div class="lower-body">
+        <div class="footer-content">
+          <div class="notification"> <h3>Every wednesday</h3>75% of from all
+            foods on the menu </div>
+          <div class="Testimonies"> <h3>Testimony</h3>Lorem inventore id
+            similique rerum odit itaque. and endorsments will go here </div>
+          <div class="food-menu">
+            <div class="menu-list">
+              <ul class="break-fast">
+                <h3> Breakfast</h3>
+                <li>breakfast 1</li>
+                <li>breakfast 2</li>
+                <li>breakfast 3</li>
+                <li>breakfast 4</li>
+                <li>breakfast 5</li>
+                <li>breakfast 6</li>
+                <li>breakfast 7</li>
+                <li>breakfast 8</li>
+                <li>breakfast 9</li>
+                <li>breakfast 10</li>
+              </ul>
+              <ul class="main-food">
+                <h3> Main Foods</h3>
+                <li>food 1</li>
+                <li>food 2</li>
+                <li>food 3</li>
+                <li>food 4</li>
+                <li>food 5</li>
+                <li>food 6</li>
+                <li>food 7</li>
+                <li>food 8</li>
+                <li>food 9</li>
+                <li>food 10</li>
+              </ul>
+
+              <ul class="drinks">
+                <h3> Drinks </h3>
+                <li>drink 1</li>
+                <li>drink 2</li>
+                <li>drink 3</li>
+                <li>drink 4</li>
+                <li>drink 5</li>
+                <li>drink 6</li>
+                <li>drink 7</li>
+                <li>drink 8</li>
+                <li>drink 9</li>
+                <li>drink 10</li>
+              </ul>
+              <ul class="other">
+                <h3> Others </h3>
+                <li>other 1</li>
+                <li>other 2</li>
+                <li>other 3</li>
+                <li>other 4</li>
+                <li>other 5</li>
+                <li>other 6</li>
+                <li>other 7</li>
+                <li>other 8</li>
+                <li>other 9</li>
+                <li>other 10</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
