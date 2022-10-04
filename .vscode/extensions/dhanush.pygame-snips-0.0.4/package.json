@@ -1,0 +1,40 @@
+{
+	"name": "pygame-snips",
+	"displayName": "pygame snips",
+	"icon": "images/logo.png",
+	"description": "pygame snippets for vscode",
+	"version": "0.0.4",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"author": {
+		"name": "Dhanush"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Dhanush-git/pygame-snips"
+	},
+	"publisher": "Dhanush",
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/snippets.code-snippets"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e12af4ef-1127-42ae-b56c-b0738289e4d9",
+		"publisherId": "63b114b6-cca3-4e9c-85c3-fb854ead9df4",
+		"publisherDisplayName": "Dhanush",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1660478386182
+	}
+}
