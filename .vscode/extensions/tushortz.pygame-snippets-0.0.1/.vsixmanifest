@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="pygame-snippets" Version="0.0.1" Publisher="tushortz"/>
+    <DisplayName>Pygame Snippets</DisplayName>
+    <Description xml:space="preserve">Pygame Snippets is a vscode snippet that makes it easy to create games in python using pygame</Description>
+    <Tags>python,completion,snippets,pygame,vscode</Tags>
+    <Categories>Snippets</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Properties>
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/tushortz/vscode-Pygame-Snippets.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/tushortz/vscode-Pygame-Snippets.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Repository" Value="https://github.com/tushortz/vscode-Pygame-Snippets.git" />
+      
+      
+      <Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/tushortz/vscode-Pygame-Snippets" />
+      
+      
+    </Properties>
+    
+    <Icon>extension/icon.gif</Icon>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/icon.gif" Addressable="true" />
+  </Assets>
+</PackageManifest>
