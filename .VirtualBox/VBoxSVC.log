@@ -1,0 +1,558 @@
+00:00:00.004135 main     VirtualBox COM Server 7.0.2 r154219 win.amd64 (Oct 19 2022 21:29:26) release log
+00:00:00.004137 main     Log opened 2022-12-04T08:29:02.695721600Z
+00:00:00.004137 main     Build Type: release
+00:00:00.004144 main     OS Product: Windows 11
+00:00:00.004144 main     OS Release: 10.0.22000
+00:00:00.004145 main     OS Service Pack: 
+00:00:00.115403 main     DMI Product Name: HP Laptop 15s-fq1xxx
+00:00:00.147791 main     DMI Product Version:  
+00:00:00.147806 main     Firmware type: UEFI
+00:00:00.148556 main     Secure Boot: VERR_PRIVILEGE_NOT_HELD
+00:00:00.148594 main     Host RAM: 3781MB (3.6GB) total, 347MB available
+00:00:00.148599 main     Executable: C:\Program Files\Oracle\VirtualBox\VBoxSVC.exe
+00:00:00.148600 main     Process ID: 7344
+00:00:00.148600 main     Package type: WINDOWS_64BITS_GENERIC
+00:00:00.358536          VirtualBox: object creation starts
+00:00:00.358900          Home directory: 'C:\Users\Thomas Kitaba\.VirtualBox'
+00:00:00.362991          Installed Drivers:
+00:00:00.369555            C:\WINDOWS\system32\DRIVERS\VBoxSup.sys (Version: 7.0.2.4219)
+00:00:00.370983            C:\WINDOWS\system32\DRIVERS\VBoxUSBMon.sys (Version: 7.0.2.4219)
+00:00:00.372123            C:\WINDOWS\system32\DRIVERS\VBoxNetAdp6.sys (Version: 7.0.2.4219)
+00:00:00.372983            C:\WINDOWS\system32\DRIVERS\VBoxNetLwf.sys (Version: 7.0.2.4219)
+00:00:00.373462          Loading settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.377366          usbLibGetDevices: Starting USB device enumeration
+00:00:00.407457          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+00:00:00.408126          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+00:00:00.413888          usbLibGetDevices: Found 2 USB devices, 0 captured
+00:00:00.414034          USB: Unknown USB device detected (idVendor: 0x0bda, idProduct: 0xb00c)
+00:00:00.414136          USB: Unknown USB device detected (idVendor: 0x30c9, idProduct: 0x0013)
+00:00:00.643643          HostDnsMonitor: initializing
+00:00:00.654091          HostDnsMonitor: updating information
+00:00:00.654128          HostDnsMonitor: old information
+00:00:00.654128            no server entries
+00:00:00.654129            no domain set
+00:00:00.654129            no search string entries
+00:00:00.654130          HostDnsMonitor: new information
+00:00:00.654130            server 1: 127.0.0.1
+00:00:00.654131            no domain set
+00:00:00.654131            no search string entries
+00:00:00.657883          VD: VDInit finished with VINF_SUCCESS
+00:00:01.054879          Loading settings file "C:\Users\Thomas Kitaba\VirtualBox VMs\tom-linux\tom-linux.vbox" with version "1.19-windows"
+00:00:01.059159          Loading settings file "C:\Users\Thomas Kitaba\Downloads\Compressed\kali-linux-2022.3-virtualbox-amd64\kali-linux-2022.3-virtualbox-amd64.vbox" with version "1.19-windows"
+00:00:01.185541          OCI: Local config file 'C:\Users\Thomas Kitaba\.VirtualBox\oci_config' does not exist
+00:00:01.185636          OCI: Original config file 'C:\Users\Thomas Kitaba\.oci\config' does not exist
+00:00:01.185637          OCI: Reading profiles finished with status ERROR_SUCCESS
+00:00:01.186937          ExtPack: Created cloud provider 'OCI' (hrc=ERROR_SUCCESS)
+00:00:01.187878          VirtualBox: object created
+00:00:01.353018          Saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:01.357901          Finished saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml"
+00:00:01.358234          Saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:01.363977          Finished saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml"
+00:00:01.364289          Saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:01.367811          Finished saving settings file "C:\Users\Thomas Kitaba\.VirtualBox\VirtualBox.xml"
+00:00:04.040278          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:07.515489          Launched VM: 477653520 pid: 18484 (0x4834) frontend: GUI/Qt name: kali-linux-2022.3-virtualbox-amd64
+00:00:07.545608          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:14.696328          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:15.420632          Load [C:\Program Files\Oracle\VirtualBox\ExtensionPacks\Oracle_VM_VirtualBox_Extension_Pack\win.amd64\VBoxHostWebcam.DLL] vrc=VINF_SUCCESS
+00:00:18.719276          ERROR [COM]: aRC=VBOX_E_IPRT_ERROR (0x80bb0005) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={SessionMachine} aText={Saved screenshot data is not available (VERR_NOT_SUPPORTED)}, preserve=false aResultDetail=-37
+00:00:19.365486          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Starting)}, preserve=false aResultDetail=0
+00:00:19.376060          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={SessionMachine} aText={The machine is not mutable or saved (state is Starting)}, preserve=false aResultDetail=0
+00:00:22.611520          ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+00:00:22.717497          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Running)}, preserve=false aResultDetail=0
+00:00:46.314440 USBPROXY usbLibGetDevices: Starting USB device enumeration
+00:00:46.327615 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+00:00:46.327776 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+00:00:46.328083 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+00:55:36.085642 dns-monitor HostDnsMonitor: updating information
+00:55:36.087307 dns-monitor HostDnsMonitor: unchanged
+02:00:00.708839 MainPower Host suspending: Paused 1 VMs
+02:00:01.309578          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Paused)}, preserve=false aResultDetail=0
+02:00:02.143280 dns-monitor HostDnsMonitor: updating information
+02:00:02.144703 dns-monitor HostDnsMonitor: old information
+02:00:02.144737 dns-monitor   server 1: 127.0.0.1
+02:00:02.144744 dns-monitor   no domain set
+02:00:02.144749 dns-monitor   no search string entries
+02:00:02.144754 dns-monitor HostDnsMonitor: new information
+02:00:02.144759 dns-monitor   server 1: 8.8.8.8
+02:00:02.144764 dns-monitor   server 2: 8.8.4.4
+02:00:02.144769 dns-monitor   no domain set
+02:00:02.144774 dns-monitor   no search string entries
+02:00:07.308515 dns-monitor HostDnsMonitor: updating information
+02:00:07.308554 dns-monitor HostDnsMonitor: old information
+02:00:07.308561 dns-monitor   server 1: 8.8.8.8
+02:00:07.308567 dns-monitor   server 2: 8.8.4.4
+02:00:07.308572 dns-monitor   no domain set
+02:00:07.308576 dns-monitor   no search string entries
+02:00:07.308589 dns-monitor HostDnsMonitor: new information
+02:00:07.308597 dns-monitor   server 1: 192.168.49.1
+02:00:07.308603 dns-monitor   server 2: 127.0.0.1
+02:00:07.308609 dns-monitor   no domain set
+02:00:07.308613 dns-monitor   no search string entries
+02:14:23.922426 MainPower Host resumed: Resumed 1 VMs
+02:14:26.005029 dns-monitor HostDnsMonitor: updating information
+02:14:26.005722 dns-monitor HostDnsMonitor: old information
+02:14:26.005756 dns-monitor   server 1: 192.168.49.1
+02:14:26.005763 dns-monitor   server 2: 127.0.0.1
+02:14:26.005769 dns-monitor   no domain set
+02:14:26.005774 dns-monitor   no search string entries
+02:14:26.005780 dns-monitor HostDnsMonitor: new information
+02:14:26.005785 dns-monitor   server 1: 192.168.49.1
+02:14:26.005790 dns-monitor   no domain set
+02:14:26.005796 dns-monitor   no search string entries
+02:14:27.142601          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Running)}, preserve=false aResultDetail=0
+02:14:30.492656 dns-monitor HostDnsMonitor: updating information
+02:14:30.492698 dns-monitor HostDnsMonitor: old information
+02:14:30.492704 dns-monitor   server 1: 192.168.49.1
+02:14:30.492711 dns-monitor   no domain set
+02:14:30.492716 dns-monitor   no search string entries
+02:14:30.492722 dns-monitor HostDnsMonitor: new information
+02:14:30.492728 dns-monitor   server 1: 8.8.8.8
+02:14:30.492734 dns-monitor   server 2: 8.8.4.4
+02:14:30.492739 dns-monitor   no domain set
+02:14:30.492744 dns-monitor   no search string entries
+02:14:34.359928 dns-monitor HostDnsMonitor: updating information
+02:14:34.359967 dns-monitor HostDnsMonitor: unchanged
+02:14:37.070575 USBPROXY usbLibGetDevices: Starting USB device enumeration
+02:14:37.085810 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+02:14:37.087823 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+02:14:37.095688 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+02:14:59.931251 dns-monitor HostDnsMonitor: updating information
+02:14:59.933849 dns-monitor HostDnsMonitor: old information
+02:14:59.933887 dns-monitor   server 1: 8.8.8.8
+02:14:59.933895 dns-monitor   server 2: 8.8.4.4
+02:14:59.933900 dns-monitor   no domain set
+02:14:59.933909 dns-monitor   no search string entries
+02:14:59.933915 dns-monitor HostDnsMonitor: new information
+02:14:59.933920 dns-monitor   server 1: 127.0.0.1
+02:14:59.933929 dns-monitor   no domain set
+02:14:59.933938 dns-monitor   no search string entries
+02:15:09.897401 dns-monitor HostDnsMonitor: updating information
+02:15:09.897451 dns-monitor HostDnsMonitor: old information
+02:15:09.897457 dns-monitor   server 1: 127.0.0.1
+02:15:09.897463 dns-monitor   no domain set
+02:15:09.897468 dns-monitor   no search string entries
+02:15:09.897473 dns-monitor HostDnsMonitor: new information
+02:15:09.897479 dns-monitor   server 1: 8.8.8.8
+02:15:09.897484 dns-monitor   server 2: 8.8.4.4
+02:15:09.897491 dns-monitor   no domain set
+02:15:09.897496 dns-monitor   no search string entries
+02:15:27.852024 dns-monitor HostDnsMonitor: updating information
+02:15:27.852079 dns-monitor HostDnsMonitor: old information
+02:15:27.852087 dns-monitor   server 1: 8.8.8.8
+02:15:27.852093 dns-monitor   server 2: 8.8.4.4
+02:15:27.852098 dns-monitor   no domain set
+02:15:27.852103 dns-monitor   no search string entries
+02:15:27.852110 dns-monitor HostDnsMonitor: new information
+02:15:27.852115 dns-monitor   server 1: 127.0.0.1
+02:15:27.852120 dns-monitor   no domain set
+02:15:27.852124 dns-monitor   no search string entries
+02:15:34.252238 dns-monitor HostDnsMonitor: updating information
+02:15:34.252288 dns-monitor HostDnsMonitor: unchanged
+02:16:06.025941 USBPROXY usbLibGetDevices: Starting USB device enumeration
+02:16:06.094790 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+02:16:06.111237 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+02:16:06.176973 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+02:25:15.324395 dns-monitor HostDnsMonitor: updating information
+02:25:15.330052 dns-monitor HostDnsMonitor: old information
+02:25:15.330400 dns-monitor   server 1: 127.0.0.1
+02:25:15.330413 dns-monitor   no domain set
+02:25:15.330420 dns-monitor   no search string entries
+02:25:15.330427 dns-monitor HostDnsMonitor: new information
+02:25:15.330433 dns-monitor   server 1: 8.8.8.8
+02:25:15.330440 dns-monitor   server 2: 8.8.4.4
+02:25:15.330452 dns-monitor   no domain set
+02:25:15.330464 dns-monitor   no search string entries
+02:25:17.842618 dns-monitor HostDnsMonitor: updating information
+02:25:17.842672 dns-monitor HostDnsMonitor: unchanged
+02:25:47.973525 dns-monitor HostDnsMonitor: updating information
+02:25:47.974883 dns-monitor HostDnsMonitor: old information
+02:25:47.974910 dns-monitor   server 1: 8.8.8.8
+02:25:47.974915 dns-monitor   server 2: 8.8.4.4
+02:25:47.974941 dns-monitor   no domain set
+02:25:47.974945 dns-monitor   no search string entries
+02:25:47.974949 dns-monitor HostDnsMonitor: new information
+02:25:47.974953 dns-monitor   server 1: 127.0.0.1
+02:25:47.974957 dns-monitor   no domain set
+02:25:47.974961 dns-monitor   no search string entries
+02:25:50.239107 dns-monitor HostDnsMonitor: updating information
+02:25:50.239155 dns-monitor HostDnsMonitor: unchanged
+03:04:20.047123 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:04:20.569355 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:04:20.572203 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:04:20.579353 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:05:15.478055          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Paused)}, preserve=false aResultDetail=0
+03:05:15.550365 Watcher  Saving settings file "C:\Users\Thomas Kitaba\Downloads\Compressed\kali-linux-2022.3-virtualbox-amd64\kali-linux-2022.3-virtualbox-amd64.vbox" with version "1.19-windows"
+03:05:15.610744 Watcher  Finished saving settings file "C:\Users\Thomas Kitaba\Downloads\Compressed\kali-linux-2022.3-virtualbox-amd64\kali-linux-2022.3-virtualbox-amd64.vbox"
+03:05:16.103231          ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={300763af-5d6b-46e6-aa96-273eac15538a} aComponent={MachineWrap} aText={The machine is not mutable (state is Aborted)}, preserve=false aResultDetail=0
+03:05:20.851101 Watcher  Reaper: Pid 18484 (4834) exited normally: 1 (0x1)
+03:05:23.899141 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:05:23.914614 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:05:23.914935 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:05:23.917405 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:10:47.582448 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:10:47.774388 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:10:47.775888 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:10:47.782468 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:10:47.842816 dns-monitor HostDnsMonitor: updating information
+03:10:47.845147 dns-monitor HostDnsMonitor: old information
+03:10:47.845586 dns-monitor   server 1: 127.0.0.1
+03:10:47.845604 dns-monitor   no domain set
+03:10:47.845610 dns-monitor   no search string entries
+03:10:47.845615 dns-monitor HostDnsMonitor: new information
+03:10:47.845620 dns-monitor   server 1: 8.8.8.8
+03:10:47.845626 dns-monitor   server 2: 8.8.4.4
+03:10:47.845631 dns-monitor   no domain set
+03:10:47.845661 dns-monitor   no search string entries
+03:10:49.245362 MainPower Host suspending: Paused 0 VMs
+03:10:53.944699 dns-monitor HostDnsMonitor: updating information
+03:10:53.944740 dns-monitor HostDnsMonitor: old information
+03:10:53.944745 dns-monitor   server 1: 8.8.8.8
+03:10:53.944750 dns-monitor   server 2: 8.8.4.4
+03:10:53.944755 dns-monitor   no domain set
+03:10:53.944759 dns-monitor   no search string entries
+03:10:53.944764 dns-monitor HostDnsMonitor: new information
+03:10:53.944768 dns-monitor   server 1: 127.0.0.1
+03:10:53.944773 dns-monitor   no domain set
+03:10:53.944777 dns-monitor   no search string entries
+03:10:54.167033 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:10:59.393915 MainPower Host resumed: Resumed 0 VMs
+03:11:01.734349 dns-monitor HostDnsMonitor: updating information
+03:11:01.734387 dns-monitor HostDnsMonitor: old information
+03:11:01.734394 dns-monitor   server 1: 127.0.0.1
+03:11:01.734400 dns-monitor   no domain set
+03:11:01.734405 dns-monitor   no search string entries
+03:11:01.734411 dns-monitor HostDnsMonitor: new information
+03:11:01.734416 dns-monitor   no server entries
+03:11:01.734421 dns-monitor   no domain set
+03:11:01.734426 dns-monitor   no search string entries
+03:11:06.145494 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:11:06.478862 dns-monitor HostDnsMonitor: updating information
+03:11:06.478912 dns-monitor HostDnsMonitor: old information
+03:11:06.478921 dns-monitor   no server entries
+03:11:06.478928 dns-monitor   no domain set
+03:11:06.478934 dns-monitor   no search string entries
+03:11:06.478942 dns-monitor HostDnsMonitor: new information
+03:11:06.478949 dns-monitor   server 1: 8.8.8.8
+03:11:06.478956 dns-monitor   server 2: 8.8.4.4
+03:11:06.478963 dns-monitor   no domain set
+03:11:06.478969 dns-monitor   no search string entries
+03:11:06.613052 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:11:06.615550 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:11:07.466029 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:11:07.910114 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:11:07.912162 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:11:07.921153 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:11:37.331353 dns-monitor HostDnsMonitor: updating information
+03:11:37.331446 dns-monitor HostDnsMonitor: old information
+03:11:37.331451 dns-monitor   server 1: 8.8.8.8
+03:11:37.331456 dns-monitor   server 2: 8.8.4.4
+03:11:37.331460 dns-monitor   no domain set
+03:11:37.331465 dns-monitor   no search string entries
+03:11:37.331469 dns-monitor HostDnsMonitor: new information
+03:11:37.331472 dns-monitor   server 1: 127.0.0.1
+03:11:37.331476 dns-monitor   no domain set
+03:11:37.331480 dns-monitor   no search string entries
+03:17:16.602289 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:17:16.632079 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:17:16.634682 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:17:16.644997 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:22:03.110491 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:22:03.138395 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:22:03.141457 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:22:03.143627 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:28:59.127439 dns-monitor HostDnsMonitor: updating information
+03:28:59.129903 dns-monitor HostDnsMonitor: old information
+03:28:59.129947 dns-monitor   server 1: 127.0.0.1
+03:28:59.129958 dns-monitor   no domain set
+03:28:59.129964 dns-monitor   no search string entries
+03:28:59.129969 dns-monitor HostDnsMonitor: new information
+03:28:59.129975 dns-monitor   server 1: 8.8.8.8
+03:28:59.129980 dns-monitor   server 2: 8.8.4.4
+03:28:59.129985 dns-monitor   no domain set
+03:28:59.129999 dns-monitor   no search string entries
+03:30:11.541386 dns-monitor HostDnsMonitor: updating information
+03:30:11.542059 dns-monitor HostDnsMonitor: old information
+03:30:11.542108 dns-monitor   server 1: 8.8.8.8
+03:30:11.542124 dns-monitor   server 2: 8.8.4.4
+03:30:11.542136 dns-monitor   no domain set
+03:30:11.542145 dns-monitor   no search string entries
+03:30:11.542154 dns-monitor HostDnsMonitor: new information
+03:30:11.542163 dns-monitor   server 1: 127.0.0.1
+03:30:11.542182 dns-monitor   no domain set
+03:30:11.542192 dns-monitor   no search string entries
+03:31:19.765343 MainPower Host suspending: Paused 0 VMs
+03:31:20.851446 dns-monitor HostDnsMonitor: updating information
+03:31:20.851521 dns-monitor HostDnsMonitor: old information
+03:31:20.851534 dns-monitor   server 1: 127.0.0.1
+03:31:20.851543 dns-monitor   no domain set
+03:31:20.851550 dns-monitor   no search string entries
+03:31:20.851558 dns-monitor HostDnsMonitor: new information
+03:31:20.851564 dns-monitor   server 1: 8.8.8.8
+03:31:20.851575 dns-monitor   server 2: 8.8.4.4
+03:31:20.851583 dns-monitor   no domain set
+03:31:20.851588 dns-monitor   no search string entries
+03:35:54.394055 MainPower Host resumed: Resumed 0 VMs
+03:35:57.347218 dns-monitor HostDnsMonitor: updating information
+03:35:57.347289 dns-monitor HostDnsMonitor: old information
+03:35:57.347300 dns-monitor   server 1: 8.8.8.8
+03:35:57.347306 dns-monitor   server 2: 8.8.4.4
+03:35:57.347314 dns-monitor   no domain set
+03:35:57.347319 dns-monitor   no search string entries
+03:35:57.347324 dns-monitor HostDnsMonitor: new information
+03:35:57.347328 dns-monitor   server 1: 192.168.49.1
+03:35:57.347333 dns-monitor   no domain set
+03:35:57.347339 dns-monitor   no search string entries
+03:36:10.701063 dns-monitor HostDnsMonitor: updating information
+03:36:10.701295 dns-monitor HostDnsMonitor: old information
+03:36:10.701315 dns-monitor   server 1: 192.168.49.1
+03:36:10.701322 dns-monitor   no domain set
+03:36:10.701331 dns-monitor   no search string entries
+03:36:10.701337 dns-monitor HostDnsMonitor: new information
+03:36:10.701342 dns-monitor   server 1: 8.8.8.8
+03:36:10.701347 dns-monitor   server 2: 8.8.4.4
+03:36:10.701351 dns-monitor   no domain set
+03:36:10.701357 dns-monitor   no search string entries
+03:36:12.722835 dns-monitor HostDnsMonitor: updating information
+03:36:12.722881 dns-monitor HostDnsMonitor: unchanged
+03:36:43.959107 dns-monitor HostDnsMonitor: updating information
+03:36:43.959440 dns-monitor HostDnsMonitor: old information
+03:36:43.959471 dns-monitor   server 1: 8.8.8.8
+03:36:43.959478 dns-monitor   server 2: 8.8.4.4
+03:36:43.959484 dns-monitor   no domain set
+03:36:43.959489 dns-monitor   no search string entries
+03:36:43.959497 dns-monitor HostDnsMonitor: new information
+03:36:43.959502 dns-monitor   server 1: 127.0.0.1
+03:36:43.959507 dns-monitor   no domain set
+03:36:43.959512 dns-monitor   no search string entries
+03:41:44.533866 dns-monitor HostDnsMonitor: updating information
+03:41:44.538480 dns-monitor HostDnsMonitor: old information
+03:41:44.538506 dns-monitor   server 1: 127.0.0.1
+03:41:44.538511 dns-monitor   no domain set
+03:41:44.538519 dns-monitor   no search string entries
+03:41:44.538524 dns-monitor HostDnsMonitor: new information
+03:41:44.538528 dns-monitor   server 1: 100.64.254.1
+03:41:44.538532 dns-monitor   server 2: 127.0.0.1
+03:41:44.538535 dns-monitor   no domain set
+03:41:44.538539 dns-monitor   no search string entries
+03:41:53.887100 dns-monitor HostDnsMonitor: updating information
+03:41:53.887135 dns-monitor HostDnsMonitor: unchanged
+03:42:13.468836 dns-monitor HostDnsMonitor: updating information
+03:42:13.468876 dns-monitor HostDnsMonitor: old information
+03:42:13.468881 dns-monitor   server 1: 100.64.254.1
+03:42:13.468896 dns-monitor   server 2: 127.0.0.1
+03:42:13.468901 dns-monitor   no domain set
+03:42:13.468911 dns-monitor   no search string entries
+03:42:13.468916 dns-monitor HostDnsMonitor: new information
+03:42:13.468920 dns-monitor   server 1: 8.8.8.8
+03:42:13.468924 dns-monitor   server 2: 8.8.4.4
+03:42:13.468928 dns-monitor   no domain set
+03:42:13.468931 dns-monitor   no search string entries
+03:42:42.461305 dns-monitor HostDnsMonitor: updating information
+03:42:42.470534 dns-monitor HostDnsMonitor: old information
+03:42:42.470579 dns-monitor   server 1: 8.8.8.8
+03:42:42.470586 dns-monitor   server 2: 8.8.4.4
+03:42:42.470593 dns-monitor   no domain set
+03:42:42.470598 dns-monitor   no search string entries
+03:42:42.470603 dns-monitor HostDnsMonitor: new information
+03:42:42.470608 dns-monitor   server 1: 127.0.0.1
+03:42:42.470619 dns-monitor   no domain set
+03:42:42.470624 dns-monitor   no search string entries
+03:42:44.652698 dns-monitor HostDnsMonitor: updating information
+03:42:44.652751 dns-monitor HostDnsMonitor: unchanged
+03:51:41.785721 USBPROXY usbLibGetDevices: Starting USB device enumeration
+03:51:41.813992 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+03:51:41.816335 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+03:51:41.824085 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+03:54:44.835220 MainPower Host suspending: Paused 0 VMs
+03:54:44.910939 dns-monitor HostDnsMonitor: updating information
+03:54:44.911454 dns-monitor HostDnsMonitor: old information
+03:54:44.911468 dns-monitor   server 1: 127.0.0.1
+03:54:44.911475 dns-monitor   no domain set
+03:54:44.911480 dns-monitor   no search string entries
+03:54:44.911485 dns-monitor HostDnsMonitor: new information
+03:54:44.911491 dns-monitor   server 1: 8.8.8.8
+03:54:44.911496 dns-monitor   server 2: 8.8.4.4
+03:54:44.911501 dns-monitor   no domain set
+03:54:44.911506 dns-monitor   no search string entries
+04:23:32.545599 MainPower Host resumed: Resumed 0 VMs
+04:23:34.828654 dns-monitor HostDnsMonitor: updating information
+04:23:34.828739 dns-monitor HostDnsMonitor: old information
+04:23:34.828752 dns-monitor   server 1: 8.8.8.8
+04:23:34.828760 dns-monitor   server 2: 8.8.4.4
+04:23:34.828766 dns-monitor   no domain set
+04:23:34.828772 dns-monitor   no search string entries
+04:23:34.828778 dns-monitor HostDnsMonitor: new information
+04:23:34.828783 dns-monitor   server 1: 192.168.49.1
+04:23:34.828789 dns-monitor   no domain set
+04:23:34.828794 dns-monitor   no search string entries
+04:23:40.875378 dns-monitor HostDnsMonitor: updating information
+04:23:40.875428 dns-monitor HostDnsMonitor: old information
+04:23:40.875435 dns-monitor   server 1: 192.168.49.1
+04:23:40.875442 dns-monitor   no domain set
+04:23:40.875447 dns-monitor   no search string entries
+04:23:40.875453 dns-monitor HostDnsMonitor: new information
+04:23:40.875458 dns-monitor   server 1: 8.8.8.8
+04:23:40.875463 dns-monitor   server 2: 8.8.4.4
+04:23:40.875469 dns-monitor   no domain set
+04:23:40.875475 dns-monitor   no search string entries
+04:23:45.475025 USBPROXY usbLibGetDevices: Starting USB device enumeration
+04:23:45.510609 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+04:23:45.535120 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+04:23:45.553969 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+04:24:22.201621 dns-monitor HostDnsMonitor: updating information
+04:24:22.204133 dns-monitor HostDnsMonitor: old information
+04:24:22.204193 dns-monitor   server 1: 8.8.8.8
+04:24:22.204201 dns-monitor   server 2: 8.8.4.4
+04:24:22.204207 dns-monitor   no domain set
+04:24:22.204212 dns-monitor   no search string entries
+04:24:22.204217 dns-monitor HostDnsMonitor: new information
+04:24:22.204221 dns-monitor   server 1: 127.0.0.1
+04:24:22.204227 dns-monitor   no domain set
+04:24:22.204231 dns-monitor   no search string entries
+04:24:34.711506 dns-monitor HostDnsMonitor: updating information
+04:24:34.711538 dns-monitor HostDnsMonitor: old information
+04:24:34.711543 dns-monitor   server 1: 127.0.0.1
+04:24:34.711548 dns-monitor   no domain set
+04:24:34.711551 dns-monitor   no search string entries
+04:24:34.711556 dns-monitor HostDnsMonitor: new information
+04:24:34.711561 dns-monitor   server 1: 8.8.8.8
+04:24:34.711568 dns-monitor   server 2: 8.8.4.4
+04:24:34.711574 dns-monitor   no domain set
+04:24:34.711579 dns-monitor   no search string entries
+04:24:36.783134 dns-monitor HostDnsMonitor: updating information
+04:24:36.783193 dns-monitor HostDnsMonitor: unchanged
+04:24:43.262291 dns-monitor HostDnsMonitor: updating information
+04:24:43.262337 dns-monitor HostDnsMonitor: old information
+04:24:43.262344 dns-monitor   server 1: 8.8.8.8
+04:24:43.262350 dns-monitor   server 2: 8.8.4.4
+04:24:43.262356 dns-monitor   no domain set
+04:24:43.262361 dns-monitor   no search string entries
+04:24:43.262367 dns-monitor HostDnsMonitor: new information
+04:24:43.262373 dns-monitor   server 1: 127.0.0.1
+04:24:43.262379 dns-monitor   no domain set
+04:24:43.262385 dns-monitor   no search string entries
+04:29:27.052903 USBPROXY usbLibGetDevices: Starting USB device enumeration
+04:29:27.094422 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+04:29:27.096635 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+04:29:27.101466 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+04:32:32.501947 USBPROXY usbLibGetDevices: Starting USB device enumeration
+04:32:32.536890 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+04:32:32.537211 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+04:32:32.537548 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+04:41:27.499093 USBPROXY usbLibGetDevices: Starting USB device enumeration
+04:41:27.527373 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+04:41:27.529018 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&213293b9&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+04:41:27.534330 USBPROXY usbLibGetDevices: Found 2 USB devices, 0 captured
+05:12:48.985902 dns-monitor HostDnsMonitor: updating information
+05:12:48.992430 dns-monitor HostDnsMonitor: old information
+05:12:48.992473 dns-monitor   server 1: 127.0.0.1
+05:12:48.992482 dns-monitor   no domain set
+05:12:48.992488 dns-monitor   no search string entries
+05:12:48.992496 dns-monitor HostDnsMonitor: new information
+05:12:48.992503 dns-monitor   server 1: 8.8.8.8
+05:12:48.992509 dns-monitor   server 2: 8.8.4.4
+05:12:48.992516 dns-monitor   no domain set
+05:12:48.992522 dns-monitor   no search string entries
+05:12:52.031385 dns-monitor HostDnsMonitor: updating information
+05:12:52.031431 dns-monitor HostDnsMonitor: old information
+05:12:52.031445 dns-monitor   server 1: 8.8.8.8
+05:12:52.031455 dns-monitor   server 2: 8.8.4.4
+05:12:52.031461 dns-monitor   no domain set
+05:12:52.031466 dns-monitor   no search string entries
+05:12:52.031473 dns-monitor HostDnsMonitor: new information
+05:12:52.031478 dns-monitor   server 1: 127.0.0.1
+05:12:52.031485 dns-monitor   no domain set
+05:12:52.031490 dns-monitor   no search string entries
+05:13:05.025086 dns-monitor HostDnsMonitor: updating information
+05:13:05.025667 dns-monitor HostDnsMonitor: old information
+05:13:05.025693 dns-monitor   server 1: 127.0.0.1
+05:13:05.025722 dns-monitor   no domain set
+05:13:05.025728 dns-monitor   no search string entries
+05:13:05.025735 dns-monitor HostDnsMonitor: new information
+05:13:05.025741 dns-monitor   server 1: 8.8.8.8
+05:13:05.025747 dns-monitor   server 2: 8.8.4.4
+05:13:05.025753 dns-monitor   no domain set
+05:13:05.025759 dns-monitor   no search string entries
+05:13:18.405467 dns-monitor HostDnsMonitor: updating information
+05:13:18.414174 dns-monitor HostDnsMonitor: old information
+05:13:18.414207 dns-monitor   server 1: 8.8.8.8
+05:13:18.414216 dns-monitor   server 2: 8.8.4.4
+05:13:18.414223 dns-monitor   no domain set
+05:13:18.414229 dns-monitor   no search string entries
+05:13:18.414236 dns-monitor HostDnsMonitor: new information
+05:13:18.414243 dns-monitor   server 1: 127.0.0.1
+05:13:18.414250 dns-monitor   no domain set
+05:13:18.414257 dns-monitor   no search string entries
+05:13:20.452211 dns-monitor HostDnsMonitor: updating information
+05:13:20.452263 dns-monitor HostDnsMonitor: unchanged
+05:33:42.338176 dns-monitor HostDnsMonitor: updating information
+05:33:42.343518 dns-monitor HostDnsMonitor: old information
+05:33:42.343545 dns-monitor   server 1: 127.0.0.1
+05:33:42.343550 dns-monitor   no domain set
+05:33:42.343554 dns-monitor   no search string entries
+05:33:42.343558 dns-monitor HostDnsMonitor: new information
+05:33:42.343561 dns-monitor   server 1: 8.8.8.8
+05:33:42.343566 dns-monitor   server 2: 8.8.4.4
+05:33:42.343570 dns-monitor   no domain set
+05:33:42.343573 dns-monitor   no search string entries
+05:34:24.034043 dns-monitor HostDnsMonitor: updating information
+05:34:24.034158 dns-monitor HostDnsMonitor: old information
+05:34:24.034170 dns-monitor   server 1: 8.8.8.8
+05:34:24.034177 dns-monitor   server 2: 8.8.4.4
+05:34:24.034277 dns-monitor   no domain set
+05:34:24.034301 dns-monitor   no search string entries
+05:34:24.034309 dns-monitor HostDnsMonitor: new information
+05:34:24.034314 dns-monitor   server 1: 127.0.0.1
+05:34:24.034319 dns-monitor   no domain set
+05:34:24.034324 dns-monitor   no search string entries
+05:45:29.715904 dns-monitor HostDnsMonitor: updating information
+05:45:29.718163 dns-monitor HostDnsMonitor: old information
+05:45:29.718179 dns-monitor   server 1: 127.0.0.1
+05:45:29.718185 dns-monitor   no domain set
+05:45:29.718189 dns-monitor   no search string entries
+05:45:29.718193 dns-monitor HostDnsMonitor: new information
+05:45:29.718197 dns-monitor   server 1: 8.8.8.8
+05:45:29.718201 dns-monitor   server 2: 8.8.4.4
+05:45:29.718205 dns-monitor   no domain set
+05:45:29.718208 dns-monitor   no search string entries
+05:45:32.324290 dns-monitor HostDnsMonitor: updating information
+05:45:32.324320 dns-monitor HostDnsMonitor: old information
+05:45:32.324324 dns-monitor   server 1: 8.8.8.8
+05:45:32.324339 dns-monitor   server 2: 8.8.4.4
+05:45:32.324345 dns-monitor   no domain set
+05:45:32.324349 dns-monitor   no search string entries
+05:45:32.324353 dns-monitor HostDnsMonitor: new information
+05:45:32.324357 dns-monitor   server 1: 127.0.0.1
+05:45:32.324360 dns-monitor   no domain set
+05:45:32.324364 dns-monitor   no search string entries
+05:45:45.825773 dns-monitor HostDnsMonitor: updating information
+05:45:45.825832 dns-monitor HostDnsMonitor: old information
+05:45:45.825836 dns-monitor   server 1: 127.0.0.1
+05:45:45.825841 dns-monitor   no domain set
+05:45:45.825845 dns-monitor   no search string entries
+05:45:45.825849 dns-monitor HostDnsMonitor: new information
+05:45:45.825857 dns-monitor   server 1: 8.8.8.8
+05:45:45.825862 dns-monitor   server 2: 8.8.4.4
+05:45:45.825866 dns-monitor   no domain set
+05:45:45.825869 dns-monitor   no search string entries
+05:45:54.215048 dns-monitor HostDnsMonitor: updating information
+05:45:54.215087 dns-monitor HostDnsMonitor: old information
+05:45:54.215092 dns-monitor   server 1: 8.8.8.8
+05:45:54.215096 dns-monitor   server 2: 8.8.4.4
+05:45:54.215100 dns-monitor   no domain set
+05:45:54.215104 dns-monitor   no search string entries
+05:45:54.215108 dns-monitor HostDnsMonitor: new information
+05:45:54.215112 dns-monitor   server 1: 127.0.0.1
+05:45:54.215116 dns-monitor   no domain set
+05:45:54.215120 dns-monitor   no search string entries
+05:46:26.274427 main     WM_QUERYENDSESSION: shutdown (0x00000000)
+05:46:26.276849 main     VBoxSvc has active connections: bActivity = false, lock count = 2
+05:46:28.464306 main     WM_ENDSESSION: shutdown cancelled (FALSE/0x00000000)
+05:52:52.255672 main     VirtualBox: object deletion starts
+05:52:52.263213 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Medium 'C:\Users\Thomas Kitaba\VirtualBox VMs\tom-linux\tom-linux.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+05:52:52.285774 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Medium 'C:\Users\Thomas Kitaba\Downloads\Compressed\kali-linux-2022.3-virtualbox-amd64\kali-linux-2022.3-virtualbox-amd64.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+05:52:52.306220 main     HostDnsMonitor: shutting down ...
+05:52:52.306463 main     HostDnsMonitor: shut down
+05:52:52.326075 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={7682d5eb-f00e-44f1-8ca2-99d08b1cd607} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+05:52:52.329582 main     VirtualBox: object deleted

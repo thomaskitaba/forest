@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.InsightsGenerator</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.InsightsGenerator.RulesEngine.FindMatchedTemplate(System.Collections.Generic.List{System.Collections.Generic.List{System.String}},Microsoft.InsightsGenerator.DataArray)">
+            <summary>
+            Find a matched template based on the single hash values
+            </summary>
+            <param name="singleHashHeaders"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Microsoft.InsightsGenerator.RulesEngine.GetTemplates" -->
+        <member name="T:Microsoft.InsightsGenerator.Template">
+            <summary>
+            Template container to hold the template id + template body combination
+            </summary>
+        </member>
+    </members>
+</doc>

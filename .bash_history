@@ -341,3 +341,74 @@ git commit -m "completed index and manage diary link"
 git status
 git diff
 exit
+git clone https://github.com/thomaskitaba/tom-diary-v2.git
+git status
+clear
+git status
+git status
+pwd
+cd tom-diary-v2
+git status
+git add -A
+git status
+git commit -am "corrected sub catagory search in advanced search page"
+git status
+git push origin main
+git status
+git status
+pwd
+npx
+git status
+git add -A
+git commit -am "corrected editprofile page to display equal divs"
+git status
+git push origin main
+git status
+exit
+pwd
+git clone '/c/Users/Thomas Kitaba/Documents/THOMAS KITABA FILES/THOMAS KITABA PROJECTS/WEB APPLICATIONS THOMAS KITABA/subscription template'
+cd ..
+pwd
+ls
+cd "Thomas Kitaba"
+pwd
+git clone https://github.com/thomaskitaba/tom-web-template.git
+git status
+git add 
+git add ?
+cls
+exit
+git remote
+git status
+ls
+git clone https://github.com/thomaskitaba/subscription-template.git
+exit
+pwd
+cd..
+pwd
+cd ..
+pwd
+ls
+cd
+cd ..
+pwd
+cd ..
+cd "\Users\Thomas Kitaba\Documents\THOMAS KITABA FILES\THOMAS KITABA PROJECTS\WEB APPLICATIONS THOMAS KITABA\subscription-template"
+pwd
+ls
+git status
+git add -A
+git status
+git commit -am "corrected generate_hash_password("123456")
+git commit -am "corrected generate_hash_password("123456")"
+git commit -am "corrected generate_hash_password("123456")
+git commit -am "corrected generate_hash_password '123456'"
+
+flask run
+git status
+git commit -am "corrected generate_password_hash"
+git statys
+git status
+git push origin main
+git status
+exit
