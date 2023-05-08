@@ -1,0 +1,446 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <limits.h>
+#include <fcntl.h>
+#include <errno.h>
+
+#define MAX_WORDS 100
+#define MAX_WORD_LENGTH 1024
+#define WORD_SIZE 1024
+#define WORD_COUNT 100
+#define BUFFER_SIZE 1024
+/**
+ * _strtok - string to words
+ * @str: string
+ * @delim: delimeter
+ * @token: 2D ponter 2 hold tokenized cmd
+ * Return: int 
+ */
+int _strtok(char *str, char *delim, char **token)
+{
+int i, w_count, total_w_len ;
+char *word, *str_cpy, *buffer;
+
+buffer = (char *)malloc(sizeof(char) * WORD_SIZE);
+w_count = 0;
+total_w_len = 0;
+str_cpy = strdup(str);
+
+word = strtok(str_cpy, delim);
+buffer = add_path(word, buffer);
+/*if path was corrected and added */
+while(word && w_count <= WORD_COUNT) {
+  if (w_count == 0 && buffer){
+    strcpy(token[w_count], buffer);
+  }
+  else
+  strcpy(token[w_count], word);
+  w_count++;
+  word = strtok(NULL, delim); 
+}
+/*add NULL at the end of token*/
+token[w_count] = NULL;
+/*TODO: add token to info_t->argc   and info_t->argv*/
+
+free(buffer);
+return (w_count);
+}
+/**
+ * _execve - execve 
+ * @av: 2D of CL arguments
+ * @env: environment variable
+ * Return: succes 1, failur -1.
+ */
+int _execve(char **av, char **env)
+{
+/*char *av_tem[] = {"/bin/ls", "-l", NULL};*/
+int status;
+struct stat st;
+
+pid_t child_pid;
+/* if path not found dont execute any thing*/
+if (stat(av[0], &st) == 0)
+child_pid = fork();
+else {
+  perror("Path not found");
+  exit(1);
+}
+if (child_pid == 0) {
+if (execve(av[0], av, env) == -1){
+    perror("Error:");
+    exit(1);
+}
+}
+else if (child_pid > 0){
+wait(&status);
+return (1);
+}
+else{
+perror("Error Creating process:");
+exit (1);
+/*TODO: update exit struct*/
+return (-1);
+}
+return (-1);
+}
+/** add_path: add path to cmd if not provided
+ * @path_arg: path argument at index 0
+ * @path_buffer: buffer holding string
+ * Return: append path return1,  path not appended, -1 
+ */
+char* add_path(char *path_arg, char *path_buffer)
+{
+  char *default_path;
+  int i, k, path_len, default_len, buffer_len, new_len, need_correction;
+  
+  new_len = path_len + buffer_len;
+  default_path = "/bin/";
+  default_len = _strlen(default_path);
+  path_len = _strlen(path_arg);
+  need_correction = 0;
+/*check if /bin/ exitst in path_arg*/
+for (i = 0; i < default_len; i++) {
+  if (default_path[i] != path_arg[i]) {
+    need_correction = 1;
+    break;
+  }
+}
+if (need_correction == 1) {
+  /*append /bin/ and ls*/
+  strcpy(path_buffer, default_path);
+  k = 0;
+  for (i = default_len; i < default_len + path_len; i++) {
+    path_buffer[i] = path_arg[k];
+    k++; }
+  path_buffer[i] = '\0';
+  return (path_buffer);
+}
+if (need_correction == 0) {
+if (path_len <= 5) {
+    printf("it is a directory");
+    return (NULL);
+  }
+  else {
+    strcpy(path_buffer, path_arg);
+    return (path_buffer); }
+}
+}
+/**
+ * _strcmp - swaps string varibles
+ * @s1: char to be copied
+ * @s2: char to be cpied to
+ * Return: 0 if the same, -1 if after, 1 if before
+ */
+int _strcmp(char *s1, char *s2)
+{
+int i, s1_len, s2_len, result;
+
+s1_len = (int)strlen(s1), s2_len = (int)strlen(s2);
+for (i = 0; i < s1_len; i++)
+{
+if (s1[i] == s2[i])
+{ result = 0; }
+else
+{
+if ((s1[i] >= 97 && s1[i] <= 122) && (s2[i] >= 65 && s2[i] <= 90) &&
+(s1[i] - s2[i] == 32))
+{
+result = s2[i] - s1[i];
+return (result);
+}
+result = s1[i] - s2[i];
+return (result);
+}
+}
+if (i + 1 == s1_len)
+{
+if (s1_len < s2_len)
+{
+result = 0 - s2[i];
+return (result);
+}
+}
+return (0);
+}
+
+/**
+ * _to_cmd - argv to 2D array
+ * @av: new argument vector
+ * @argv:  argument vector
+ * @argc: argument count 
+ */
+int _tokenize(char **av, char **argv, int argc)
+{
+  int i, k;
+for (i = 1, k = 0; i < argc; i++)
+{
+  if (i == 1)
+  {
+    strcpy(av[k], "/bin/echo"); /*replace /bin with append this with */
+    k++;
+    continue;
+  }
+  strcpy(av[k], argv[i]);
+  k++;
+}
+av[argc-1] = NULL;
+return (0);
+}
+
+/**
+ * tokenize_string - change string to 2D array
+ * @str: string to be tokenized
+ * Return: 1 on success, -1 on failur
+ */
+char **tokenize_string(char *str, char **token, int *len)
+{
+  /*char str[] = "thomas kitaba feyissa";*/
+  char *delimeter = " ";
+  int i, w_count;
+  w_count = 0;
+  /*malloc for 2d array **token  row*/
+  w_count = _strtok(str, delimeter, token);
+  if (w_count == -1)
+  return (NULL);
+  /*_print_2d(token, w_count + 1);*/
+  
+  *len = (w_count + 1);
+  /*free memory */
+  return (token);
+}
+/**
+ * _print_2d - print 2D array
+ * @av: argument vector
+ * @argc: argument count
+ * Return: void
+ */
+void _print_2D(char **av, int argc)
+{
+  int i; 
+for (i = 0; i < argc - 1; i++)
+{
+  printf("%s\t", av[i]);
+}
+}
+/**
+* _strcspn - find \\n and replace it with \0 
+*@c: char to be searched
+*Return: replace buf
+*/
+int _strcspn(char *buf, char c)
+{
+int i, n;
+if (!buf)
+return (0);
+for (i = 0, n = (int)strlen(buf) ; i < n; i++) {
+  if (buf[i] == c) {
+    return (i);
+    break;
+  }
+}
+return (0);
+}
+/**
+ * _strcat - concatinate variables
+ * @src: char one
+ * @dest: char two
+ * Return: concatinated character
+ */
+char *_strcat(char *dest, char *src)
+{
+int i, dest_len, src_len;
+dest_len = (int)strlen(dest);
+src_len = (int)strlen(src);
+
+/* first find the null char*/
+for (i = 0; i < src_len; i++) {
+dest[dest_len + i] = src[i];
+if (i + 1 == src_len) {
+	dest[dest_len + i + 1] = '\0';
+}
+}
+return (dest);
+}
+
+/**
+ * _get_word_count - length of string
+ * @str: string
+ * Return: int 
+ */
+int _get_word_count(char *str, char *delim)
+{
+  int word_count = 0;
+  char *token;
+  token = strtok(str, delim);
+  while (token)
+  {
+    word_count++;
+    token = strtok(NULL, delim);
+  }
+  return word_count;
+}
+/**
+ * _strlen - length of string
+ * @str: string
+ * Return: int 
+ */
+int _strlen(char *str)
+{
+  int i;
+  i = 0;
+  while(str[i] != '\0') {
+    i++;   }
+return (i);
+}
+/**
+ * _free_2D - free 2D array
+ * @2d: 2d array
+ * Return: void
+ */
+void _free_2D(char **token, int rows)
+{
+int i;
+for (int i = 0; i < rows; i++) {
+    free(token[i]);
+}
+free(token);
+}
+/**
+ * create_buffer - create buffer
+ * Return: buffer
+ */
+char *create_buffer(void)
+{
+char *buf;
+buf = malloc(sizeof(char) * BUFFER_SIZE);
+if (!buf)
+        return (NULL);
+return (buf);
+}
+char **create_2D_buffer(char **av)
+{
+  int i;
+  av = (char **)malloc(sizeof(char *) * MAX_WORDS);
+  if (!av) {
+    return (NULL);
+  }
+for (i = 0; i < MAX_WORDS; i++) {
+av[i] = (char *)malloc(sizeof(char) * MAX_WORD_LENGTH);
+if (!av[i])
+return (NULL);
+}
+return (av);
+}
+/**
+ * hsh - the shell part
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 or 1 
+ */
+int hsh(int argc, char **argv)
+{
+  int i, result, w_len;
+  char *buffer;
+  ssize_t read;
+  size_t len;
+  pid_t pid;
+  char **av;
+  
+/* create and allocate 2D array */
+char **av_token;
+av_token = (char **)malloc(sizeof(char *) * MAX_WORDS);
+for (i = 0; i < MAX_WORDS; i++)
+{
+av_token[i] = (char *)malloc(sizeof(char) * MAX_WORD_LENGTH);
+}
+/*if ac == 1 && av[0] = "./hsh"
+this means it is interactive mode do the loop*/
+if (argc == 1 && (strcmp(argv[0], "./hsh") == 0))
+{
+  
+  printf("interactive mode\n");
+  do{
+  buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+  putchar('$');
+  
+  read = getline(&buffer, &len, stdin);
+  
+  /*TODO: we have to remove the new line from buffer*/
+  buffer[_strcspn(buffer, '\n')] = '\0';
+  result = strcmp(buffer,  "exit");
+  if (read == -1)
+  {
+    /*add error to error log*/
+    /* handle ERROR */
+	free(buffer);
+	exit(1);
+  }
+  if (result == 0)
+  {
+	/*handle ERROR*/
+    free(buffer);
+	exit (1);
+  }
+  if (read > 0)
+  {
+  /*printf("%s\n", buffer); call convert buffer to 2d array*/
+  w_len = 0;
+  av_token = tokenize_string(buffer, av_token, &w_len);
+  /*_print_2d(av_token, w_len);*/
+  _execve(av_token, NULL);
+  /*_putchar('\n');*/
+  /*send tokenized 2D array to execve()*/
+  /*fork here*/
+  }
+  free(buffer);
+  }while (result != 0 && read != -1 && read > 1 && buffer[read - 1] != '\n');
+}
+/*else if more than one argument
+  it means it is not interactive mode so just send 
+  tokenize_cmd (av, ar, av)*/
+else
+{
+  /*printf("command line mode\n");*/
+  av = (char**)malloc(sizeof(char *) * (argc + 1));
+  for (i = 0; i < argc + 1; i++)
+  {
+    av[i] = (char *)malloc(sizeof(char) * _strlen(av[i] + 1));
+    strcpy(av[i], argv[i]);
+    if (i + 1 == argc)
+    {
+      av[i + 1] = NULL;
+      break;
+    }
+  }
+  /*add NULL to argv*/
+  _execve(av, NULL);
+/*TODO: add error check for execve*/
+/*tokenize the argv arguments */
+/*send them to execve*/
+}
+_free_2D(av, argc + 1);
+_free_2D(av_token, w_len);
+return (0);
+}
+
+/**
+ * main - entry point of the program
+ * 
+ * Return: 0 on success
+ */
+int main(int argc, char **argv)
+{
+  int a; /*to accept returned value from hsh*/
+  /*initialize some variables here*/
+  /*step 1: send string and recive 2d array*/
+  /*step 2: send the 2d array to tokenzier
+  */
+  
+  hsh(argc, argv);
+  return (0);
+}
