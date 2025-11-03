@@ -108,8 +108,33 @@ class ForestGrowthPredictor:
                 'test_size': len(X_test),
                 'model_type': 'CNN-LSTM',
                 'sequence_length': self.sequence_length,
+                'feature_count': n_features,
                 'feature_importance': np.abs(theta[1:]) if len(theta) > 1 else [1.0]
             }
+
+            # Build human-readable feature names matching how X_enhanced is constructed
+            # Original sequence values (oldest -> newest), then engineered features
+            feat_names = []
+            # lag names: lag_{sequence_length} ... lag_1 (oldest to most recent)
+            for i in range(self.sequence_length):
+                lag = self.sequence_length - i
+                feat_names.append(f'lag_{lag}')
+
+            # engineered features appended after the sequence
+            engineered = ['mean', 'std', 'min', 'max', 'trend']
+            feat_names.extend(engineered)
+
+            # Trim or extend to match feature_count if needed
+            if len(feat_names) != results['feature_importance'].__len__():
+                # If mismatch, try to align with stored feature_count
+                expected = results.get('feature_count', n_features)
+                if len(feat_names) > expected:
+                    feat_names = feat_names[:expected]
+                else:
+                    # pad with generic names
+                    feat_names.extend([f'F{i+1}' for i in range(len(feat_names), expected)])
+
+            results['feature_names'] = feat_names
             
             self.is_trained = True
             return results

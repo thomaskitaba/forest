@@ -28,16 +28,46 @@ except ImportError as e:
 def initialize_earth_engine():
     return True
 
-def get_forest_data(geometry):
-    return [
-        {'year': 2018, 'ndvi': 0.65, 'forest_cover': 56, 'precipitation': 1200},
-        {'year': 2019, 'ndvi': 0.68, 'forest_cover': 58, 'precipitation': 1250},
-        {'year': 2020, 'ndvi': 0.71, 'forest_cover': 62, 'precipitation': 1180},
-        {'year': 2021, 'ndvi': 0.69, 'forest_cover': 60, 'precipitation': 1150},
-        {'year': 2022, 'ndvi': 0.73, 'forest_cover': 65, 'precipitation': 1300},
-        {'year': 2023, 'ndvi': 0.75, 'forest_cover': 68, 'precipitation': 1280},
-        {'year': 2024, 'ndvi': 0.77, 'forest_cover': 70, 'precipitation': 1350}
-    ]
+def get_forest_data(geometry, aoi_name=None):
+    """Return mock forest data. If geometry (or named AOI) is provided, slightly vary the base NDVI
+    to simulate different areas. In production this would query Earth Engine or a database.
+    """
+    # Base mock series
+    base = [0.65, 0.68, 0.71, 0.69, 0.73, 0.75, 0.77]
+
+    # If aoi_name wasn't provided (older call-sites), try session state
+    if aoi_name is None:
+        try:
+            aoi_name = st.session_state.get('selected_aoi')
+        except Exception:
+            aoi_name = None
+
+    # Determine a deterministic offset based on AOI name or geometry
+    offset = 0.0
+    if aoi_name and aoi_name in AOIS:
+        # small offsets per AOI to simulate variation
+        offsets_map = {name: (i + 1) * 0.01 for i, name in enumerate(AOIS.keys())}
+        offset = offsets_map.get(aoi_name, 0.0)
+    elif geometry is not None:
+        # use min_lon to create a repeatable offset
+        try:
+            min_lon = geometry['coordinates'][0][0][0]
+            offset = (abs(min_lon) % 1) * 0.05
+        except Exception:
+            offset = 0.0
+
+    years = list(range(2018, 2018 + len(base)))
+    data = []
+    for i, y in enumerate(years):
+        ndvi = base[i] + offset
+        data.append({
+            'year': y,
+            'ndvi': round(ndvi, 3),
+            'forest_cover': 50 + int((ndvi - 0.6) * 100),
+            'precipitation': 1100 + int((ndvi - 0.6) * 1000)
+        })
+
+    return data
 
 def create_aoi_geometry(min_lon, max_lon, min_lat, max_lat):
     return {"type": "Polygon", "coordinates": [[
@@ -71,6 +101,11 @@ def initialize_session_state():
     
     if 'prediction_years' not in st.session_state:
         st.session_state.prediction_years = 3
+    # AOI selection state
+    if 'selected_aoi' not in st.session_state:
+        st.session_state.selected_aoi = 'Custom'
+    if 'aoi_geometry' not in st.session_state:
+        st.session_state.aoi_geometry = None
 
 def main():
     st.title("🌳 Forest Growth Monitoring System")
@@ -105,9 +140,20 @@ def main():
     st.sidebar.subheader("📍 Area Selection")
     aoi_names = ["Custom"] + list(AOIS.keys())
     selected_aoi = st.sidebar.selectbox("Select Area", aoi_names)
-    
-    # Demo data
-    demo_data = get_forest_data(None)
+
+    # Save selection in session state so all pages can access it
+    st.session_state.selected_aoi = selected_aoi
+
+    # Compute geometry for named AOIs
+    if selected_aoi != 'Custom' and selected_aoi in AOIS:
+        a = AOIS[selected_aoi]
+        st.session_state.aoi_geometry = create_aoi_geometry(a['min_lon'], a['max_lon'], a['min_lat'], a['max_lat'])
+    else:
+        st.session_state.aoi_geometry = None
+
+    # Demo data for the selected AOI (geometry may be None for Custom)
+    # Call with a single arg for compatibility with other modules / older signatures
+    demo_data = get_forest_data(st.session_state.aoi_geometry)
     
     # Display based on selected mode
     if app_mode == "🏠 Dashboard":
@@ -126,8 +172,19 @@ def show_dashboard(data):
     
     with col1:
         st.subheader("📍 Study Area")
-        st.info("Bale Mountains Region, Ethiopia")
-        st.metric("Area Size", "1,200 km²")
+        # Show currently selected AOI
+        aoi_label = st.session_state.get('selected_aoi', 'Custom')
+        st.info(aoi_label)
+        # If a known AOI is selected, show a simple area estimate
+        if aoi_label in AOIS:
+            a = AOIS[aoi_label]
+            # crude area estimate (degrees -> approx km)
+            area_deg = abs(a['max_lon'] - a['min_lon']) * abs(a['max_lat'] - a['min_lat'])
+            # 1 deg ~ 111 km, square -> 111^2
+            area_km2 = int(area_deg * 111 * 111)
+            st.metric("Area Size", f"{area_km2:,} km²")
+        else:
+            st.metric("Area Size", "Custom")
         st.metric("Planting Started", "2018")
         st.metric("CNN-LSTM Ready", "✅" if st.session_state.trained else "❌")
     
@@ -174,7 +231,8 @@ def show_dashboard(data):
             st.session_state.current_page = "predictions"
 
 def show_data_analysis(data):
-    st.header("📊 Forest Data Analysis")
+    aoi_label = st.session_state.get('selected_aoi', 'Custom')
+    st.header(f"📊 Forest Data Analysis — {aoi_label}")
     
     df = pd.DataFrame(data)
     
@@ -369,10 +427,20 @@ def show_model_insights(data):
         
         with col2:
             st.subheader("🔍 Feature Importance")
-            if 'feature_importance' in results and results['feature_importance']:
-                features = [f'F{i+1}' for i in range(len(results['feature_importance']))]
+            # Safely handle feature importance which may be a numpy array or list.
+            fi = results.get('feature_importance')
+            if fi is not None and np.array(fi).size > 0:
+                # ensure a flat array for plotting
+                fi_arr = np.array(fi).ravel()
+                # Prefer human-readable names from the training results
+                fname_list = results.get('feature_names') if results is not None else None
+                if fname_list and len(fname_list) == len(fi_arr):
+                    features = fname_list
+                else:
+                    features = [f'F{i+1}' for i in range(len(fi_arr))]
+
                 fig = px.bar(
-                    x=features, y=results['feature_importance'],
+                    x=features, y=fi_arr,
                     title='Feature Importance Scores',
                     labels={'x': 'Features', 'y': 'Importance'}
                 )
